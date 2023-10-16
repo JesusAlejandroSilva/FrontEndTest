@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Students</h1>
+
+    <table class = "table table-bordered">
+        <thead>
+            <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>FirstMidName</td>
+            <td>EnrollmentDate</td>
+            <td></td>
+            </tr>
+            <tr>
+            <tr *ngFor ="let item of students">
+                <td>{{item.ID}}</td>
+                <td>{{item.LastName}}</td>
+                <td>{{item.FirstMidName}}</td>
+                <td>{{item.EnrollmentDate}}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a  class="btn btn-sm btn-outline-warning" [routerLink]="['/student-edit', item.ID]">Edit</a> 
+                        <a  class="btn btn-sm btn-outline-danger" [routerLink]="['/student-delete', item.ID]">Delete</a>
+                    </div> 
+                </td>
+            </tr>
+
+        </thead>
+
+    </table>
+
+</div>
+
