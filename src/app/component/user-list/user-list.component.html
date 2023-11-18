@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Users</h1>
+
+    <table class = "table table-bordered">
+        <thead>
+            <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Credits</td>
+            <td></td>
+            </tr>
+            <tr>
+            <tr *ngFor ="let item of persons">
+                <td>{{item.Names}}</td>
+                <td>{{item.LastNames}}</td>
+                <td>{{item.Type_Ide}}</td>
+                <td>{{item.Id_Number}}</td>
+                <td>{{item.Email}}</td>
+                <td>{{item.Date_Creation}}</td>
+                <td>
+                </td>
+            </tr>
+
+        </thead>
+
+    </table>
+
+</div>

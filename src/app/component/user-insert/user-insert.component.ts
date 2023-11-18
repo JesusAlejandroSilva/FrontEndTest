@@ -1,38 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Student } from 'src/app/domain/student';
-import { StudentService } from 'src/app/services/student.service';
+import { Users } from 'src/app/domain/users';
+import { UsersService } from 'src/app/services/users.service';
 import swal from'sweetalert2';
 
 @Component({
-  selector: 'app-student-insert',
-  templateUrl: './student-insert.component.html',
-  styleUrls: ['./student-insert.component.css']
+  selector: 'app-user-insert',
+  templateUrl: './user-insert.component.html',
+  styleUrls: ['./user-insert.component.css']
 })
-export class StudentInsertComponent {
+export class UserInsertComponent {
 
-  
-  public student: Student;
+  public users: Users;
   public showMsg: boolean = false;
   public msg: string;
   public type: string;
   public Alert: string;
   
-  constructor(public studentService: StudentService,
+  constructor(public usersService: UsersService,
     private router: Router){ 
-      this.student = new Student(0, '', '', new Date());
+      this.users = new Users('', '');
       this.msg = '';
       this.type = '';
       this.Alert = '';
   }
 
   ngOnInit(): void {
-    this.student = new Student(0, '', '', new Date());
+    this.users = new Users('', '');
   }
    
   public save(){
-    this.studentService.save(this.student).subscribe(data => {
-      this.router.navigate(['/student-list'])
+    this.usersService.save(this.users).subscribe(data => {
+      this.router.navigate(['/user-list'])
       swal.fire('Saved successfully', this.Alert, 'success')
     }, error => {
       console.log(error);

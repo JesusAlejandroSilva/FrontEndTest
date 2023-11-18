@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Create Course</h2>
+    <div class="form-row" **ngIf="showMsg">
+        <div class="alert alert-{{type}} cold-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+    <form #courseForm="ngForm">
+        <div class="form-row">
+          <div class="col-md-2">
+            <label>Names: </label>
+            <input type="text" id="Names" name="Names" placeholder="Enther the Names"
+            class="form-control" #Names [(ngModel)]="persons.Names"/>
+          <div class="col-md-2">
+            <label>LastNames: </label>
+            <input type="text" id="LastNames" name="LastNames" placeholder="Enther the LastNames"
+            class="form-control" #LastNames [(ngModel)]="persons.LastNames"/>
+          </div>
+          <div class="col-md-2">
+            <label>Type_Ide: </label>
+            <input type="text" id="Type_Ide" name="Type_Ide" placeholder="Enther the Type_Ide"
+            class="form-control" #Type_Ide [(ngModel)]="persons.Type_Ide"/>
+          </div>
+          <div class="col-md-2">
+            <label>Id_Number: </label>
+            <input type="text" id="Id_Number" name="Id_Number" placeholder="Enther the Id_Number"
+            class="form-control" #Id_Number [(ngModel)]="persons.Id_Number"/>
+          </div>
+          <div class="col-md-2">
+            <label>Email: </label>
+            <input type="text" id="Email" name="Email" placeholder="Enther the Email"
+            class="form-control" #Email [(ngModel)]="persons.Email"/>
+          </div>
+          <div class="col-md-2">
+            <label>Date_Creation: </label>
+            <input type="date" id="Date_Creation" name="Date_Creation" placeholder="Enther the Date_Creation"
+            class="form-control" #Date_Creation [(ngModel)]="persons.Date_Creation"/>
+        </div>
+        </div>
+
+        <br>
+        <button class="btn btn-outline-primary btn-sm" (click)="save()">Save</button>
+        <a class ="btn btn-outline-primary btn-sm" [routerLink]="['/course-list']">Back</a>
+    </form>
+</div>

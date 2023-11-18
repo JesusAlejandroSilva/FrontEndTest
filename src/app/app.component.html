@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">
     <img src="./assets/images/AC.png" width="30" height="30" alt="">
-    Accenture
+    Users
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -11,20 +11,19 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-          Courses
+          Users
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" [routerLink]="['/course-list']">List</a>
-          <a class="dropdown-item" [routerLink]="['/course-insert']">Create</a>
+          <a class="dropdown-item" [routerLink]="['/user-list']">List</a>
+          <a class="dropdown-item" [routerLink]="['/user-insert']">Create</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-          Students
+          Persons
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" [routerLink]="['/student-list']">List</a>
-          <a class="dropdown-item" [routerLink]="['/student-insert']">Create</a>
+          <a class="dropdown-item" [routerLink]="['/persons-insert']">Create</a>
         </div>
       </li>
     </ul>

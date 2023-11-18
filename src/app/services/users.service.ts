@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Student } from '../domain/student';
+import { Users } from '../domain/users';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StudentService {
+export class UsersService {
 
   public url: string;
 
   constructor(public httpClient: HttpClient) {
-    //this.url = 'https://localhost:44312/api/Students/';
-    this.url = environment.apiUrl + 'Students/';
+    this.url = environment.apiUrl + 'Users/';
    }
 
   public getAll():Observable<any>{
@@ -24,12 +23,8 @@ export class StudentService {
     return this.httpClient.get(this.url + id);
   }
 
-  public save(student: Student): Observable<any>{
-    return this.httpClient.post(this.url, student);
-  }
-
-  public edit(student: Student): Observable<any>{
-    return this.httpClient.put(this.url + '/'+ student.ID, student);
+  public save(users: Users): Observable<any>{
+    return this.httpClient.post(this.url, users);
   }
 
   public delete(id:number){

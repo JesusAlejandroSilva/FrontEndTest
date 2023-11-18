@@ -1,36 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Course } from 'src/app/domain/course';
-import { CourseService } from 'src/app/services/course.service';
+import { Persons } from 'src/app/domain/persons';
+import { PersonsService } from 'src/app/services/persons.service';
 import swal from'sweetalert2';
 @Component({
-  selector: 'app-course-insert',
-  templateUrl: './course-insert.component.html',
-  styleUrls: ['./course-insert.component.css']
+  selector: 'app-persons-insert',
+  templateUrl: './persons-insert.component.html',
+  styleUrls: ['./persons-insert.component.css']
 })
-export class CourseInsertComponent implements OnInit {
+export class PersonInsertComponent implements OnInit {
 
-  public course: Course;
+  public persons: Persons;
   public showMsg: boolean = false;
   public msg: string;
   public type: string;
   public Alert: string;
   
-  constructor(public courseService: CourseService,
+  constructor(public personService: PersonsService,
     private router: Router){ 
-      this.course = new Course(0, '', 0);
+      this.persons = new Persons('','','','','',new Date());
       this.msg = '';
       this.type = '';
       this.Alert = '';
   }
 
   ngOnInit(): void {
-    this.course = new Course(0, '', 0);
+    this.persons = new Persons('','','','','',new Date());
   }
    
   public save(){
-    this.courseService.save(this.course).subscribe(data => {
-      this.router.navigate(['/course-list'])
+    this.personService.save(this.persons).subscribe(data => {
+      this.router.navigate(['/user-list'])
       swal.fire('Saved successfully', this.Alert, 'success')
     }, error => {
       console.log(error);

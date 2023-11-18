@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Login</h2>
+    <div class="form-row" **ngIf="showMsg">
+        <div class="alert alert-{{type}} cold-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+    <form #Form="ngForm">
+        <div class="form-row">
+          <div class="col-md-4">
+            <label>UserName: </label>
+            <input type="text" id="UserName" name="UserName" placeholder="Enther the UserName"
+            class="form-control" #UserName [(ngModel)]="users.UserName" readonly/>
+          </div>
+          <div class="col-md-4">
+            <label>Password: </label>
+            <input type="password" id="Pass" name="Pass" placeholder="Enther the Pass"
+            class="form-control" #Pass [(ngModel)]="users.Pass" />
+          </div>
+        </div>
+        <br>
+        <button class="btn btn-outline-primary btn-sm" (click)="save()">Save</button>
+    </form>
+</div>
+
